@@ -31,7 +31,12 @@ html{
 *,
 *::before,
 *::after{
-    block-size: inherit;
+    box-sizing: inherit;
+}
+
+*:focus{
+    outline: 2px dotted var(--primary-color);
+    outline-offset: 4px;
 }
 
 body{
@@ -71,6 +76,26 @@ img{
     align-items: center;
 }
 
+.site-header-logo{
+    margin-right: auto;
+    transition: opacity .4s ease;
+}
+
+
+.site-header-logo:hover{
+    opacity: 0.8;
+}
+
+.site-header-logo:focus{
+    opacity: 0.6;
+}
+
+.site-header-logo-img{
+    width: 35px;
+    height: 42px;
+    display: block;
+}
+
 .sitenav {
     margin-right: 40px;
 }
@@ -88,10 +113,21 @@ img{
     color: #333;
     font-size: 15px;
     padding-top: 3px;
+    transition: border-bottom .4s ease;
+}
+
+.sitenav-link:hover{
+    opacity: 0.8;
+}
+
+.sitenav-link:focus{
+    opacity: 0.6;
+    border-bottom: 3px solid #333;
 }
 .search-form-input {
     color: #666;
-    padding-bottom: 6px;
+    font-size: 15px;
+    padding-bottom: 5px;
     border: 100;
     border-bottom: 1px solid #333;
 }
